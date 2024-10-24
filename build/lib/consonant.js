@@ -3,10 +3,9 @@ const CONSONANTS = 'bcdfghjklmnpqrstvwxz'.split('');
 export function consonants(str) {
     if(isString(str)){
       let fjoldi = 0;
-      for(let stafur in CONSONANTS){
-        let cons = CONSONANTS[stafur]
-        if(str.includes(cons)){
-          fjoldi++;
+      for(let stafur of CONSONANTS){
+        if(str.includes(stafur)){
+          fjoldi += (str.split(stafur).length - 1)
         }
       }
       return fjoldi;
